@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 150px;
-  background-color: black;
+  background-color: #421B9B;
   color: white;
 }
 
@@ -48,8 +48,4 @@ input {
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.goOption {
-  
 }

@@ -6,14 +6,16 @@
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-    <h1>Help me choose between...</h1>
+    <h1 class="h1Section">Hjälp mig välja lunchställe...</h1>
     <div class="inputSection">
       <div class="inputs">
         <input placeholder="Something"></input>
       </div>
-      <button class="addOption">Add</button>
+      <button class="addOption">Lägg till</button>
     </div>
-    <button class="goOption">Go!</button>
+    <div class="resultSection"></div>
+    <button>Kör!</button>
+
     <div class="imageSection">
       <div class="image">
         <img src="http://www.pngmart.com/files/1/Real-Diamond-PNG.png" alt="Diamond" height="30%" width="30%">
@@ -33,5 +35,19 @@
         <input type="checkbox">vet ej</input></br>
         <button>Klar</button></br>
       </div>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script>
+      $(function() {
+        $(".resultSection").hide()
+
+        var add_option = function() {
+          $(".inputs").append("<input></input>")
+        }
+
+        $(".addOption").click(add_option)
+
+      })
+      </script>
   </body>
 </html>
