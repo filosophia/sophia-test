@@ -14,7 +14,7 @@
       <button class="addOption">Lägg till</button>
     </div>
     <div class="resultSection"></div>
-    <button>Kör!</button>
+    <button class="submit">Kör!</button>
 
     <div class="imageSection">
       <div class="image">
@@ -22,31 +22,28 @@
       </div>
     </div>
 
-      <div>
-        <label>Välj ett användarnamn 4 till 8 bokstäver</label></br>
-        <input type="text" id="name" name="name" required minlength?"4" maxlength="8" size="10"></input></br>
-        <label>Välj ett lösenord</label></br>
-        <input type="password"></br>
-        <button>Skicka</button></br>
-        </br>
-        <label>Välj en av följande</label></br>
-        <input type="checkbox">sant</input></br>
-        <input type="checkbox">falskt</input></br>
-        <input type="checkbox">vet ej</input></br>
-        <button>Klar</button></br>
-      </div>
-
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       <script>
-      $(function() {
-        $(".resultSection").hide()
+        $(function() {
+          $('.resultSection').hide()
 
         var add_option = function() {
-          $(".inputs").append("<input></input>")
+          $('.inputs').append('<input></input>')
         }
+        $('.addOption').click(add_option)
 
-        $(".addOption").click(add_option)
-
+        var options = []
+        var submit = function() {
+          $('.inputSection').hide()
+          $('.resultSection').css('display', 'flex')
+          $('input').each(function() {
+            options.push($(this).val())
+          })
+          var winner = options[Math.floor(Math.random() * options.length)]
+          console.log(winner)
+          $('.resultSection').text(winner)
+        }
+        $('.submit').click(submit)
       })
       </script>
   </body>
